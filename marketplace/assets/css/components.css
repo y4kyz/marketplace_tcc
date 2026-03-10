@@ -1,0 +1,181 @@
+/* ============================= */
+/* PRODUCT GRID */
+/* ============================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* ============================= */
+/* PRODUCT CARD */
+/* ============================= */
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #f3f4f6;
+}
+
+.product-card-content {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* ============================= */
+/* LAYOUT COM SIDEBAR */
+/* ============================= */
+
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+}
+
+/* ============================= */
+/* SIDEBAR FILTROS */
+/* ============================= */
+
+.sidebar {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ============================= */
+/* TABELAS PADRÃO */
+/* ============================= */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.table th {
+    background: #f9fafb;
+    font-weight: 600;
+}
+
+.table tr:hover {
+    background: #f3f4f6;
+}
+
+/* ============================= */
+/* DASHBOARD CARDS */
+/* ============================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.dashboard-card h4 {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.dashboard-card .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* ============================= */
+/* BADGES (STATUS) */
+/* ============================= */
+
+.badge {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.badge-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
