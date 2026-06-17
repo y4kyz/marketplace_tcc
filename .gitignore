@@ -1,0 +1,67 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Build
+dist/
+build/
+
+# Vite
+vite.svg
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cobertura de testes
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+tmp/
+temp/
+
+# PM2
+.pm2/
+pids/
+*.pid
+*.pid.lock
+
+# Dumps e relatórios
+*.seed
+*.out
+*.err
+
+# Arquivos compactados
+*.zip
+*.tar
+*.gz
+*.rar
+
+# A pasta downloads, pq o burro do caralho esqueceu de colocar no gitignore da primeira vez
+
+backend/uploads/

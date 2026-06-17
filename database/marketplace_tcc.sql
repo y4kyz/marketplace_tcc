@@ -16,6 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `carrinho_itens`
+--
+
+DROP TABLE IF EXISTS `carrinho_itens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `carrinho_itens` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario_id` int(11) NOT NULL,
+  `produto_id` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL DEFAULT 1,
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `usuario_id` (`usuario_id`),
+  KEY `produto_id` (`produto_id`),
+  CONSTRAINT `carrinho_itens_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
+  CONSTRAINT `carrinho_itens_ibfk_2` FOREIGN KEY (`produto_id`) REFERENCES `produtos` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carrinho_itens`
+--
+
+LOCK TABLES `carrinho_itens` WRITE;
+/*!40000 ALTER TABLE `carrinho_itens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `carrinho_itens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `categorias`
 --
 
@@ -122,7 +152,7 @@ CREATE TABLE `produtos` (
   KEY `vendedor_id` (`vendedor_id`),
   CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`),
   CONSTRAINT `produtos_ibfk_2` FOREIGN KEY (`vendedor_id`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +161,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,'Produto Teste','Descri??o do produto teste',100.00,10,NULL,1,1,1,'2026-03-02 23:07:09');
+INSERT INTO `produtos` VALUES (1,'Produto Teste','Descri??o do produto teste',100.00,10,NULL,1,1,1,'2026-03-02 23:07:09'),(2,'Produto Teste','Produto top do caralho',100.00,10,NULL,1,3,1,'2026-05-07 21:53:55'),(3,'Produto Teste','Produto top do caralho',100.00,10,NULL,1,3,1,'2026-05-07 22:21:41'),(4,'Produto Teste','Produto top do caralho',100.00,10,NULL,1,3,1,'2026-05-07 22:21:46');
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +181,7 @@ CREATE TABLE `usuarios` (
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,7 +190,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Vendedor Teste','vendedor@email.com','123456','vendedor','2026-03-02 23:06:01'),(2,'Cliente Teste','cliente@email.com','123456','cliente','2026-03-02 23:06:01');
+INSERT INTO `usuarios` VALUES (1,'Vendedor Teste','vendedor@email.com','123456','vendedor','2026-03-02 23:06:01'),(2,'Cliente Teste','cliente@email.com','123456','cliente','2026-03-02 23:06:01'),(3,'João','joao@email.com','$2b$10$.NZMHQ.qLgbbzmMMVIidFe0FD4cCuH3DpO5QAwSseKe6e/WmIQ2ou','vendedor','2026-05-07 21:42:05');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -173,4 +203,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-02 20:34:12
+-- Dump completed on 2026-05-07 21:03:07
